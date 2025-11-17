@@ -3,16 +3,12 @@
 ## Overview
 This project is part of the `2025 Travelers UMC TriGuard Insurance Company Modeling Problem`. The objective is to develop machine learning models to predict the likelihood of subrogation for insurance claims. This includes exploratory analysis, data cleaning, model experimentation, and an inference for subrogation predictions.
 
----
-
 ## Objectives
 - Identify patterns in insurance data related to subrogations
 - Handle data issues and class imbalances
 - Evaluate and compare different models and ensembles  
 - Predict subrogation outcomes using claim data based on f1 performance
 - Produce explainable and accurate predictions for real world data  
-
----
 
 ## Data
 The following files were given:
@@ -29,7 +25,6 @@ Some feature categories:
 
 The data did not include detailed writeups of the events (text attributes), only basic structured fact features.
 
----
 
 ## Methods
 
@@ -77,7 +72,6 @@ While these methods may prove useful in future exploration, for the sake of the 
 
 Two advanced tabular modeling frameworks were explored in depth: **AutoGluon-Tabular** and **TabNet**. Both are designed specifically for tabular structured datasets, and often provide better results than the traditional tabular ML methods explored above.
 
----
 
 #### **TabNet**
 TabNet is a deep learning framework developed at Google. It uses sequential attention to determine its features at each step, providing interpretability on feature importance.
@@ -90,7 +84,7 @@ TabNet is a deep learning framework developed at Google. It uses sequential atte
 - Slower and expensive training compute compared to boosting models  
 - F1 results were similar or behind ensemble approaches on this dataset.  
 
---- 
+ 
 #### **AutoGluon-Tabular (Final Model)**
 AutoGluon-Tabular is a ML framework for tabular data developed by AWS. It trains many strong tabular models (logistic regression, random forests, LightGBM, CatBoost, XGBoost, neural nets, etc.) and builds optimized ensembles from those results. It consistently delivered the strongest results and was thus selected as the final production model. 
 
@@ -103,7 +97,7 @@ AutoGluon-Tabular is a ML framework for tabular data developed by AWS. It trains
 
 AutoGluon is a state of the art framework for structured tabular data and accordingly provided the best results for subrogation prediction.
 
----
+
 
 ## Results
 
@@ -115,14 +109,14 @@ AutoGluon is a state of the art framework for structured tabular data and accord
 
 These are the top 10 features as provided by AutoGluon. Based on the model results, they are the most impactful on subrogation claims, and further exploration on more data can help inform claim opportunities and resource allocation in real world cases.
 
----
+
 
 ## Repository Files
 
 - `01_training.ipynb`: training and testing pipeline for AutoGluon
 - `02_inference.ipynb`: using Autogluon model to predict future subrogation outcomes
 
----
+
 
 ## Summary
 This project explores a diverse set of models for predicting subrogation outcomes in insurance claims. After experimenting with standard industry-level models, AutoGluon  delivered the strongest and most consistent results, outperforming standalone gradient boosting models and other deep learning approaches.
